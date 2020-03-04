@@ -2,7 +2,10 @@
 Repository for Barnabás Keszler's work.  
   
 Following the syllabus at:  
-https://github.com/green-fox-academy/stable-syllabus  
+https://github.com/green-fox-academy/stable-syllabus
+
+My Github "website"  
+https://bkeszl.github.io  
 ## Notes
 ### 2020.03.04
 #### Todays other repos:
