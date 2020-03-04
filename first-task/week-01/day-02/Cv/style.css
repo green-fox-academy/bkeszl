@@ -1,0 +1,112 @@
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans';
+    color: #222;
+    line-height: 1.5em;
+    font-size: 1em;
+
+}
+
+h2 {
+  text-transform: uppercase;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.hero-image {
+  background-image: url("assets/anakin.png");
+  height: 50%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-text {
+  margin-left: 20%;
+  margin-right: 20%;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 2em;
+}
+
+.hero-text h2{
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  left: 25%;
+  bottom: 3em;
+  font-size: 1em;
+  text-transform: none;
+}
+
+.hero-text h1{
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  left: 25%;
+  bottom: 0.75em;
+}
+.wrap {
+  margin: 0 25%;
+}
+p {
+font-weight: 300;
+margin-bottom: 1.5em;
+margin-top: 1.5em;
+}
+li{
+  font-weight: 300;
+}
+q {
+  width: 110%;
+  height: 100%;
+  font-size: 2.5em;
+  color: white;
+  background-color: #444;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+  padding-left: 5%;
+  margin-left: -5%;
+  margin-right: 5%;
+  font-weight: bold;
+  display: block;
+  font-family: 'Abril Fatface', cursive;
+  line-height: 1.5em;
+
+
+
+}
+q::after{
+  content: no-close-quote;
+}
+
+q::before{
+  font-size: 3em;
+  position: relative;
+  left: -.3em;
+  float: left;
+  line-height: 0;
+}
+ul{
+  list-style-type: square;
+  margin-bottom: 2em;
+}
+
+h3{
+  margin: 0;
+  font-size: 1.1em;
+
+}
+h4{
+margin: 0 0;
+font-style: italic;
+font-family: 'Merriweather';
+font-size: 0.9em;
+}
+.separator {
+  height: 0.3em;
+  width: inherit;
+  background-color: #444;
+}
