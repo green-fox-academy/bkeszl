@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Orders {
+public class Swap {
     public static void main(String[] args) {
         String[] orders = {"first", "second", "third"};
         String buffer = new String();
