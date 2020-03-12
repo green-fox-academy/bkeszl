@@ -4,17 +4,16 @@ import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PositionSquare {
+public class CenterBoxFunction {
     public static void mainDraw(Graphics graphics){
-        graphics.setColor(Color.BLUE);
         for (int i = 0; i <3 ; i++) {
-            square( 85, 30 + i*75, graphics);
+            boxes( 40+(i*10), graphics);
         }
-
     }
-
-    public static void square(int x, int y, Graphics graph) {
-        graph.fillRect(x, y, 50, 50);
+    public static void boxes(int inSize, Graphics graph) {
+        int consRandom = new Random().nextInt(255);
+        graph.setColor(new Color(consRandom,consRandom,consRandom));
+        graph.drawRect(WIDTH/2-(inSize/2), HEIGHT/2-(inSize/2), inSize, inSize);
     }
     // Don't touch the code below
     //region Drawing boilerplate
