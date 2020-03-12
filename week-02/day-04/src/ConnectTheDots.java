@@ -2,33 +2,19 @@ import javax.swing.*;
 import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FunctionToCenter {
+public class ConnectTheDots {
     public static void mainDraw(Graphics graphics){
-
-
-        for (int i = 0; i <4 ; i++) {
-            for (int j = 0; j <HEIGHT ; j+=20) {
-                switch (i) {
-                    case 0:
-                        goToC(j, 0 , graphics);
-                    break;
-                    case 1:
-                        goToC(j,HEIGHT , graphics);
-                        break;
-                    case 2:
-                        goToC(WIDTH, j, graphics);
-                        break;
-                    case 3:
-                        goToC(0, j, graphics);
-                        break;
-                }
-            }
-        }
-
+        int[][] points = {{10, 10}, {290,  10}, {290, 290}, {10, 290}};
+        int[][] morePoints = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
+        connect(morePoints, graphics);
     }
 
-    public static void goToC(int x, int y, Graphics graph) {
-        graph.drawLine(x, y, WIDTH/2, HEIGHT/2);
+    public static void connect(int[][] points, Graphics graph) {
+        graph.setColor(Color.GREEN);
+        for (int i = 0; i < points.length-1 ; i++) {
+                graph.drawLine(points[i][0], points[i][1], points[i + 1][0], points[i + 1][1]);
+        }
+        graph.drawLine(points[points.length-1][0],points[points.length-1][1] , points[0][0], points[0][1]);
     }
     // Don't touch the code below
     //region Drawing boilerplate
