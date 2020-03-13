@@ -4,13 +4,13 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Triangles {
     public static void mainDraw(Graphics graphics){
-        int sideLength = 20;
+        int sideLength = 40;
         int startInc = 0;
 
         for (int i = 0; i <WIDTH/sideLength ; i++) {
 
             for (int j = WIDTH/sideLength-i; j < WIDTH/sideLength ; j++) {
-                drawTriangle(((i*sideLength)+(j*(sideLength/2)))-WIDTH/2, j*sideLength, sideLength, graphics);
+                drawTriangle(((i*sideLength)+(j*(sideLength/2)))-WIDTH/2, (j*sideLength)-(j*(sideLength-(int) Math.sqrt((sideLength * sideLength) - ((sideLength / 2) * (sideLength / 2))))), sideLength, graphics);
             }
         }
 
