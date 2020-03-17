@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DiceSet {
-  static ArrayList<Integer> dice = new ArrayList<>();
+   static ArrayList<Integer> dice = new ArrayList<>();
 
   public ArrayList<Integer> roll() {
     for (int i = 0; i < 6; i++) {
@@ -43,7 +43,7 @@ public class DiceSet {
     for (int i = 0; i < 6 ; i++) {
       do {
         diceSet.reroll(i);
-      } while (dice.get(i) != 6);
+      } while (DiceSet.dice.get(i) != 6);
     }
     System.out.println(diceSet.getCurrent());
   }
