@@ -45,7 +45,7 @@ public class ExtensionTest {
 
   @Test
   public void testIsVowel_u() {
-    assertTrue(extension.isVowel('u'));
+    assertTrue(extension.isVowel('U'));
   }
 
   @Test
@@ -54,12 +54,12 @@ public class ExtensionTest {
   }
 
   @Test
-  public void testTranslate_lagopus() {
-    assertEquals("lavagovopuvus", extension.translate("lagopus"));
+  public void testTranslate_lagopusu() {
+    assertEquals("lavagovopuvusuvu", extension.translate("lagopusu"));
   }
 
   @Test
   public void testTranslate_unoka() {
-    assertEquals("uvunokava", extension.translate("unoka"));
+    assertEquals("uvunovokava", extension.translate("unoka"));
   }
 }
