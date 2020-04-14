@@ -27,6 +27,35 @@ public class StreamExpressions {
         .filter(number -> number % 2 == 1 || number % 2 == -1)
         .mapToDouble(Integer::doubleValue)
         .average()
-        .ifPresent(System.out::print);
+        .ifPresent(System.out::println);
+
+    System.out.println("Exercise 5");
+    numbers = Arrays.asList(5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2);
+    int sum = numbers.stream()
+        .filter(number -> number % 2 == 1 || number % 2 == -1)
+        .mapToInt(Integer::intValue)
+        .sum();
+    System.out.println(sum);
+
+    System.out.println("Exercise 6");
+    String stringIn = "fInD thE LOWerCasE";
+    stringIn.chars()
+        .filter(Character::isUpperCase)
+        .mapToObj(Character::toChars)
+        .forEach(System.out::println);
+
+    System.out.println("Exercise 7");
+    List<String> cities = Arrays.asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS");
+    String givenParameter = "A";
+    cities.stream()
+        .filter(str -> str.startsWith(givenParameter))
+        .forEach(System.out::println);
+
+    System.out.println("Exercise 8");
+    List<Character> characters = Arrays.asList('b', 'i', 'g');
+    StringBuilder charString = new StringBuilder();
+    characters.stream()
+        .forEach(c -> charString.append(c.charValue()));
+    System.out.println(charString.toString());
   }
 }
