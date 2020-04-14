@@ -20,5 +20,13 @@ public class StreamExpressions {
     numbers.stream()
         .filter(number -> Math.sqrt(20) < number)
         .forEach(System.out::println);
+
+    System.out.println("Exercise 4");
+    numbers = Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14);
+    numbers.stream()
+        .filter(number -> number % 2 == 1 || number % 2 == -1)
+        .mapToDouble(Integer::doubleValue)
+        .average()
+        .ifPresent(System.out::print);
   }
 }
