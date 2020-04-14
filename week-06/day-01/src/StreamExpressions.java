@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamExpressions {
   public static void main(String[] args) {
@@ -57,5 +59,38 @@ public class StreamExpressions {
     characters.stream()
         .forEach(c -> charString.append(c.charValue()));
     System.out.println(charString.toString());
+
+    System.out.println("Exercise 9");
+    String givenString = "I have been very naughty!";
+    System.out.println(givenString.chars()
+        .mapToObj(Character::toString)
+        .collect(Collectors.groupingBy(c -> c, Collectors.counting())));
+
+    System.out.println("Exercise 10");
+    List<Fox> foxesList = new ArrayList<>();
+    foxesList.add(new Fox("Enie", "green", 3));
+    foxesList.add(new Fox("Menie", "green", 2));
+    foxesList.add(new Fox("Minie", "green", 5));
+    foxesList.add(new Fox("Moe", "green", 7));
+    foxesList.add(new Fox("Galbatorix", "red", 3));
+
+    foxesList.stream()
+        .filter(f -> f.getColor().equals("green"))
+        .map(Fox::getName)
+        .forEach(System.out::println);
+
+    System.out.println("----------");
+
+    foxesList.stream()
+        .filter(f -> f.getColor().equals("green") && f.getAge() < 5)
+        .map(Fox::getName)
+        .forEach(System.out::println);
+
+    System.out.println("----------");
+
+    System.out.println(
+    foxesList.stream()
+        .collect(Collectors.groupingBy(Fox::getColor, Collectors.counting()))
+    );
   }
 }
