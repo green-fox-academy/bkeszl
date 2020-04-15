@@ -1,0 +1,75 @@
+.wrapper {
+    margin: auto;
+    background-color: white;
+    display: flex;
+    width: max-content;
+    padding: 35px;
+    align-items: center;
+    justify-content: center;
+}
+body {
+    background-color: #e4e4e4;
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    display: block;
+    border-width: 0 0px 1px 0;
+    margin: 3px 0 3px 0;
+    height: 30px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 100;
+    color: lightseagreen;
+    border-color: lightseagreen;
+}
+
+input:focus {
+    border-bottom-width: 2px;
+}
+
+button {
+    display: block;
+    outline: none;
+    height: 25px;
+}
+
+.button-container {
+    float: right;
+}
+
+h1 {
+    margin: 0 0 35px;
+}
+.roundThing {
+    height: 60px;
+    width: 60px;
+    border-radius: 45px;
+    background-color: #e4e4e4;
+    text-align: center;
+    display: table;
+}
+
+.textInRoundThing {
+    font-size: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#facebook-button {
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+}
+
+#twitter-button {
+    background-color: lightblue;
+    color: white;
+    font-weight: bold;
+}
+
+#googlePlus-button {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
