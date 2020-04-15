@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+<div class="wrapper">
+    <form action="">
+        <h1>ACCOUNT LOGIN</h1>
+        <label for="username-input">USERNAME</label>
+        <input type="text" name="username-input" id="username-input" required>
+        <label for="password-field">PASSWORD</label>
+        <input type="password" name="password-input" id="password-field" required minlength="6">
+        <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+        <u>Forgot Password?</u>
+        <button type="button">Login</button>
+    </form>
+</div>
+</body>
+<script>
+    function viewPassword()
+    {
+        var passwordInput = document.getElementById('password-field');
+        var passStatus = document.getElementById('pass-status');
+
+        if (passwordInput.type == 'password'){
+            passwordInput.type='text';
+            passStatus.className='fa fa-eye-slash';
+
+        }
+        else{
+            passwordInput.type='password';
+            passStatus.className='fa fa-eye';
+        }
+    }
+</script>
+</html>
