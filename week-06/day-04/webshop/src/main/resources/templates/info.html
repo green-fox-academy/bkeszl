@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,400&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="flexToMiddle">
+    <div class="shop">
+        <h1>My Shop</h1>
+        <div class="queryController">
+            <a href="/only-available">ONLY AVAILABLE</a>
+            <a href="/cheapest-first">CHEAPEST FIRST</a>
+            <a href="/contains-nike">CONTAINS NIKE</a>
+            <a href="/average-stock">AVERAGE STOCK</a>
+            <a href="/most-expensive">MOST EXPENSIVE AVAILABLE</a>
+        </div>
+        <div class="search">
+            <form action="/search" method="post">
+                <input type="text" name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+           <h2 th:text="${information}"></h2>
+    </div>
+</div>
+</body>
+</html>
