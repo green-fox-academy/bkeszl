@@ -63,7 +63,11 @@ public class BankController {
 
   @PostMapping(value = "/addacount")
   public String addAccount(@RequestParam Map<String, String> params) {
-    accounts.add(new BankAccount(params.get("name"), Integer.parseInt(params.get("balance")), params.get("animalType"), Boolean.parseBoolean(params.get("isKing")), params.get("alignment") ));
+    boolean kingStatus = false;
+    if (params.get("isKing").equals("on")) {
+      kingStatus = true;
+    }
+    accounts.add(new BankAccount(params.get("name"), Integer.parseInt(params.get("balance")), params.get("animalType"), kingStatus, params.get("alignment") ));
     return "redirect:/";
   }
 }
