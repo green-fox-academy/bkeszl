@@ -1,0 +1,58 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Paaji 2', cursive;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.wrap {
+    margin-top: 50px;
+}
+
+table {
+    border-collapse: collapse;
+
+}
+
+table th {
+    background-color: darkblue;
+    color: whitesmoke;
+}
+
+table td {
+    padding: 1em;
+    border: 1px white solid;
+}
+
+table th {
+    padding: 1.5em;
+}
+
+table tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+table tr:nth-child(odd) {
+    background-color: peachpuff;
+}
+
+tr:first-child th:first-child {
+    border-radius: 6px 0 0 0;
+}
+
+tr:first-child th:last-child {
+    border-radius: 0 6px 0 0;
+}
+tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 6px;
+}
+tbody tr:last-child td:last-child {
+    border-radius: 0 0 6px 0;
+}

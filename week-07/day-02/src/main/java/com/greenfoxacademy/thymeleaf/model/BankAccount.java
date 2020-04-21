@@ -5,12 +5,14 @@ public class BankAccount {
   private int balance;
   private String animalType;
   private boolean isKing;
+  private String alignment;
 
-  public BankAccount(String name, int balance, String animalType, boolean isKing) {
+  public BankAccount(String name, int balance, String animalType, boolean isKing, String alignment) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
     this.isKing = isKing;
+    this.alignment = alignment;
   }
 
   public String getName() {
@@ -43,5 +45,13 @@ public class BankAccount {
 
   public void setKing(boolean king) {
     this.isKing = king;
+  }
+
+  public String getAlignment() {
+    return alignment;
+  }
+
+  public void setAlignment(String alignment) {
+    this.alignment = alignment;
   }
 }
