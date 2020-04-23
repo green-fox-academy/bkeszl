@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add student to GFA</title>
+</head>
+<body>
+<form action="/gfa/check" method="post">
+    <input id="name" name="name" type="text">
+    <input type="submit" value="Check student">
+</form>
+<div th:if="${present} != null">
+<p th:text="${present} ? 'Present' : 'He/she aint here Your Honor!'"></p>
+</div>
+<a href="/gfa">Main page</a>
+</body>
+</html>
