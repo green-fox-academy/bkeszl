@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Not teveclub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li><a th:href="'/info?name=' + ${fox.getName()}">Information</a></li>
+        <li><a th:href="'/nutritionstore?name=' + ${fox.getName()}">Nutrition Center</a></li>
+        <li><a th:href="'/trickcenter?name=' + ${fox.getName()}">Trick Center</a></li>
+    </ul>
+    <form action="/nutritionstore" method="post">
+        <label for="food-dropdown">Food: </label>
+        <select name="food" id="food-dropdown">
+            <option th:value="${fox.getFood()}" th:text="${fox.getFood()}"></option>
+            <option th:if="${food.equals(fox.getFood()) == false }" th:each="food : ${foods}" th:value="${food}" th:text="${food}"></option>
+        </select>
+        <label for="drink-dropdown">Drink: </label>
+        <select name="drink" id="drink-dropdown">
+            <option th:value="${fox.getDrink()}" th:text="${fox.getDrink()}"></option>
+            <option th:if="${drink.equals(fox.getDrink()) == false }" th:each="drink : ${drinks}" th:value="${drink}" th:text="${drink}"></option>
+        </select>
+        <input type="hidden" name="name" th:value="${fox.getName()}"/>
+        <input type="submit" value="Change">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Not teveclub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li><a th:href="'/info?name=' + ${fox.getName()}">Information</a></li>
+        <li><a th:href="'/nutritionstore?name=' + ${fox.getName()}">Nutrition Center</a></li>
+        <li><a th:href="'/trickcenter?name=' + ${fox.getName()}">Trick Center</a></li>
+    </ul>
+    <img src="img/greenfox.png" alt="green fox">
+    <p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getFood()}
+    + ' and ' + ${fox.getDrink()} + '. They know ' + ${fox.getTricks().size()} + ' tricks.'" ></p>
+    <h2>Known tricks</h2>
+    <p th:if="${fox.getTricks().size() == 0}">They are dumb and know no tricks :(</p>
+    <ul>
+        <li th:each="trick : ${fox.getTricks()}" th:text="${trick}"></li>
+    </ul>
+</div>
+</body>
+</html>
