@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Not Reddit</title>
+</head>
+<body>
+    <a href="/submit">Submit a new post</a>
+    <table>
+        <thead>
+        <th colspan="4">Trending Posts</th>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${posts}">
+            <td th:text="${post.getScore()}"></td>
+            <td><a th:href="'/' + ${post.getId()} + '/true'">+</a></td>
+            <td><a th:href="'/' + ${post.getId()} + '/false'">-</a></td>
+            <td><a th:text="${post.getTitle()}" th:href="${post.getUrl()}"></a></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
