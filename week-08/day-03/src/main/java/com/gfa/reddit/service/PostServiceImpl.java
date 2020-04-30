@@ -42,7 +42,7 @@ public class PostServiceImpl implements PostService {
   public void changeScore(long id, boolean isPositive) {
     Post toChangeScore = postRepository.findById(id).get();
     if (isPositive) {
-      toChangeScore.setScore(toChangeScore.getScore()+1);
+      toChangeScore.setScore(toChangeScore.getScore() + 1);
     } else {
       toChangeScore.setScore(toChangeScore.getScore() - 1);
     }
