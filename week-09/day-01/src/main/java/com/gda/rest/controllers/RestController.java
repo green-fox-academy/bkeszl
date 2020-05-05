@@ -5,6 +5,8 @@ import com.gda.rest.model.Log;
 import com.gda.rest.model.LogResponse;
 import com.gda.rest.model.RequestArray;
 import com.gda.rest.model.RequestArrayResult;
+import com.gda.rest.model.Sith;
+import com.gda.rest.model.SithSpeak;
 import com.gda.rest.repository.LogRepository;
 import com.google.gson.Gson;
 import java.util.ArrayList;
@@ -47,5 +49,13 @@ public class RestController {
     Spliterator<Log> spliterator = logRepository.findAll().spliterator();
     StreamSupport.stream(spliterator, false).sorted(Comparator.comparing(Log::getId)).forEach(logEntries::add);
     return new ResponseEntity<>(new LogResponse(logEntries), HttpStatus.OK);
+  }
+
+  @PostMapping("/sith")
+  public ResponseEntity<?> sithSpeak(@RequestBody Sith sith) {
+    if (sith == null || sith.getText().equals("") || sith.getText() == null) {
+      return new ResponseEntity<>(new Error("Feed me some text you have to, padawan young you are. Hmmm."), HttpStatus.BAD_REQUEST);
+    }
+    return new ResponseEntity<>(new SithSpeak(sith), HttpStatus.OK);
   }
 }
