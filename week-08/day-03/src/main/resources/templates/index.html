@@ -13,8 +13,8 @@
         <tbody>
         <tr th:each="post : ${posts}">
             <td th:text="${post.getScore()}"></td>
-            <td><a th:href="'/' + ${post.getId()} + '/true'">+</a></td>
-            <td><a th:href="'/' + ${post.getId()} + '/false'">-</a></td>
+            <td><a th:href="|/${post.getId()}/true|">+</a></td>
+            <td><a th:href="|/${post.getId()}/false|">-</a></td>
             <td><a th:text="${post.getTitle()}" th:href="${post.getUrl()}"></a></td>
             <td th:text="${post.getCreated()}"></td>
         </tr>

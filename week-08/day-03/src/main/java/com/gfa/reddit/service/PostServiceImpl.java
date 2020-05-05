@@ -22,25 +22,16 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
-  public void upVotePost(long id) {
-    Post toUpVote = postRepository.findById(id).get();
-    toUpVote.setScore(toUpVote.getScore()+1);
-    postRepository.save(toUpVote);
-  }
-
-  @Override
-  public void downVotePost(long id) {
-    postRepository.findById(id).get().setScore(postRepository.findById(id).get().getScore()-1);
-  }
-
-  @Override
   public Iterable<Post> getPosts() {
     return postRepository.getAllInOrOrderByScore();
   }
 
   @Override
   public void changeScore(long id, boolean isPositive) {
-    Post toChangeScore = postRepository.findById(id).get();
+    Post toChangeScore = new Post();
+    if (postRepository.findById(id).isPresent()) {
+       toChangeScore = postRepository.findById(id).get();
+    }
     if (isPositive) {
       toChangeScore.setScore(toChangeScore.getScore() + 1);
     } else {

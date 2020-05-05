@@ -41,10 +41,4 @@ public class RedditController {
     postService.changeScore(id, isPositive);
     return "redirect:/";
   }
-
-  @GetMapping("/{id}/downvote")
-  public String downVotePost(@PathVariable long id){
-    postService.downVotePost(id);
-    return "redirect:/";
-  }
 }
