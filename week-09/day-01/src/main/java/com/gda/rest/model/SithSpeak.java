@@ -17,20 +17,20 @@ public class SithSpeak {
       wordsOfSentence = purifyWords(wordsOfSentence);
       List<String> yodaSentence = yodaOrder(wordsOfSentence);
       for (int i = 0; i < yodaSentence.size(); i++) {
-        if (i == 0){
-          sb.append(yodaSentence.get(i).substring(0,1).toUpperCase());
+        if (i == 0) {
+          sb.append(yodaSentence.get(i).substring(0, 1).toUpperCase());
           sb.append(yodaSentence.get(i).substring(1));
         } else {
-        sb.append(yodaSentence.get(i));
+          sb.append(yodaSentence.get(i));
         }
-        if (i<yodaSentence.size()-1) {
+        if (i < yodaSentence.size() - 1) {
           sb.append(" ");
         }
       }
       sb.append(". ");
     }
     sb.append(randomWords());
-    this.sith_text=sb.toString();
+    this.sith_text = sb.toString();
   }
 
   public SithSpeak() {
@@ -47,7 +47,7 @@ public class SithSpeak {
   public List<String> purifyWords(List<String> inputWords) {
     for (int i = 0; i < inputWords.size(); i++) {
       if (inputWords.get(i).endsWith(".")) {
-        inputWords.set(i, inputWords.get(i).substring(0, inputWords.get(i).length()-1));
+        inputWords.set(i, inputWords.get(i).substring(0, inputWords.get(i).length() - 1));
       }
       inputWords.set(i, inputWords.get(i).toLowerCase());
     }
@@ -85,10 +85,10 @@ public class SithSpeak {
 
   public String randomWords() {
     Random random = new Random();
-    List<String> yodaWords= new ArrayList<>(Arrays.asList("Hmm.", "Yes.", "The ghouls.", "Could be."));
+    List<String> yodaWords = new ArrayList<>(Arrays.asList("Hmm.", "Yes.", "The ghouls.", "Could be."));
     StringBuilder stringBuilder = new StringBuilder();
     int randomLength = random.nextInt(5);
-    for (int i = 0; i < randomLength ; i++) {
+    for (int i = 0; i < randomLength; i++) {
       stringBuilder.append(yodaWords.get(random.nextInt(4)));
       if (i != randomLength - 1) {
         stringBuilder.append(" ");
