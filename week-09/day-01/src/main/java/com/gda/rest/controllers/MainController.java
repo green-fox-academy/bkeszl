@@ -65,7 +65,7 @@ public class MainController {
                                    @RequestParam(required = false) String title,
                                    HttpServletRequest httpServletRequest)  {
 
-    if (name == null || title ==null){
+    if (name == null || title == null){
       logRepository.save(new Log("/greeter", gson.toJson(httpServletRequest.getParameterMap())));
       return new ResponseEntity<>(responseService.greeterError(new Greeting(name, title)), HttpStatus.BAD_REQUEST);
     }
