@@ -11,6 +11,9 @@ public class Factorial {
   public static long  calculateFactorial(int toFactor) {
     long result = toFactor;
 
+    if (toFactor == 0) {
+      return 1;
+    }
     //i = 11 -> 10, 9 ... 1
     for (int i = toFactor - 1; i >= 1 ; i--) {
       result *= i;
